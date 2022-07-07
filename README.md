@@ -2,6 +2,52 @@
 
 [images.json link](https://goodmorningbucket.s3.amazonaws.com/images.json)
 
+ code : 
+
+ ```js
+'use strict';
+
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+let data = [];
+
+
+exports.handler  = async (event) => {
+    const record = event.Records[0].s3;
+    const bucketName = record.bucket.name;
+    const file = record.object;
+    const parameters = {
+        Bucket: bucketName,
+        Key: 'images.json'
+    };
+    const uploadParameters = {
+        Body: file,
+        contentType: 'json',
+        Bucket: bucketName,
+        Key: 'images.json'
+    };
+    const uploadImage = async () => {
+        let res = await new Promise((resolve, reject) => {
+            s3.putObject(parameters, (err, result) => {  
+                if (!err){
+resolve(result);
+                } 
+            });
+        });
+        return res;
+    };
+    s3.getObject(parameters, (err, res) => {
+        if (!err) {
+            data.push(res.Body);
+            console.log("between 😂")
+            data.push(file)
+            uploadParameters.Body = data;
+        }else console.log(err)
+    })
+    return uploadImage();
+};
+
+```
 
 
 
