@@ -1,6 +1,6 @@
 # image-lambda
 
-[images.json link](https://git-top-group-bucket.s3.amazonaws.com/images.json)
+[images.json link](https://goodmorningbucket.s3.amazonaws.com/images.json)
 
 
 
