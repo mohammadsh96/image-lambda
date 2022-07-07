@@ -9,7 +9,7 @@ this is our bucket :
 
 `git-top-group-bucket`
 
-![bucket](./assets/4.png)
+![bucket](./assets/bucketfiles.png)
 
 
 `git-top-group-function`
@@ -19,13 +19,10 @@ this is our Lembda function :
 ![lembda](./assets/3.png)
 
 
-this is images.json results :
-
-![res](./assets/2.png)
 
 this is log groups :
 
-![logs](./assets/5.png)
+![logs](./assets/logs.png)
 
 
 ---------------------------
